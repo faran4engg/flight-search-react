@@ -1,6 +1,7 @@
 .App {
   display: grid;
-  grid-row-gap: 12px;
+  margin: 1em;
+  grid-row-gap: 1em;
   grid-template-areas: "search-area" "result-area";
 }
 
@@ -16,8 +17,7 @@ ResultArea {
   .App {
     margin: 1em;
     grid-column-gap: 2em;
-    grid-row-gap: 24px;
-    grid-template-columns: 2fr 4fr;
-    grid-template-areas: ".  search-area" "result-area";
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "search-area" "result-area";
   }
 }
