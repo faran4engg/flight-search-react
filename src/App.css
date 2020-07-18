@@ -1,0 +1,23 @@
+.App {
+  display: grid;
+  grid-row-gap: 12px;
+  grid-template-areas: "search-area" "result-area";
+}
+
+SearchArea {
+  grid-area: search-area;
+}
+
+ResultArea {
+  grid-area: result-area;
+}
+
+@media (min-width: 768px) {
+  .App {
+    margin: 1em;
+    grid-column-gap: 2em;
+    grid-row-gap: 24px;
+    grid-template-columns: 2fr 4fr;
+    grid-template-areas: ".  search-area" "result-area";
+  }
+}
