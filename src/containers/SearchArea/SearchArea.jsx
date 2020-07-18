@@ -3,13 +3,20 @@ import { Form, Field } from "react-final-form";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import FlightSearchTabs from "../../components/FlightSearchTabs/FlightSearchTabs";
 
 const SearchArea = () => {
   const onSubmit = (values) => {
     console.log("onSubmit...", values);
   };
-  return (
-    <Form
+  return <FlightSearchTabs />;
+};
+
+export default SearchArea;
+
+/*
+
+ <Form
       onSubmit={onSubmit}
       render={({ handleSubmit, form, invalid }) => (
         <form noValidate onSubmit={handleSubmit}>
@@ -34,7 +41,4 @@ const SearchArea = () => {
         </form>
       )}
     />
-  );
-};
-
-export default SearchArea;
+*/
