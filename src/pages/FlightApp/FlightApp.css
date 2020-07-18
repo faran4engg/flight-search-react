@@ -1,20 +1,20 @@
-.App {
+.flight-app {
   display: grid;
   margin: 2em;
   grid-row-gap: 1em;
   grid-template-areas: "search-area" "result-area";
 }
 
-SearchArea {
+SearchArea.search-area {
   grid-area: search-area;
 }
 
-ResultArea {
+ResultArea.result-area {
   grid-area: result-area;
 }
 
 @media (min-width: 768px) {
-  .App {
+  .flight-app {
     margin-top: 2.5em;
     grid-column-gap: 2em;
     grid-template-columns: 1fr 2fr;

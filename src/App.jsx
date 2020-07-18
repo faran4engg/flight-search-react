@@ -1,18 +1,12 @@
 import React from "react";
-import Container from "@material-ui/core/Container";
-import ResultArea from "./containers/ResultArea/ResultArea";
-import SearchArea from "./containers/SearchArea/SearchArea";
-import "./App.css";
+import FlightApp from "./pages/FlightApp/FlightApp";
+import TopNavBar from "./components/TopNavBar/TopNavBar";
 
-function App() {
-  return (
-    <Container>
-      <div className="App">
-        <SearchArea />
-        <ResultArea />
-      </div>
-    </Container>
-  );
-}
+const App = () => (
+  <>
+    <TopNavBar />
+    <FlightApp />
+  </>
+);
 
 export default App;

@@ -4,9 +4,9 @@ const ResultArea = () => {
   return (
     <div>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Result 1</li>
+        <li>Result 2</li>
+        <li>Result 3</li>
       </ul>
     </div>
   );

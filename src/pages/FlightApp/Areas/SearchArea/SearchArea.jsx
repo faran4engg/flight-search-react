@@ -3,7 +3,7 @@ import { Form, Field } from "react-final-form";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import FlightSearchTabs from "../../components/FlightSearchTabs/FlightSearchTabs";
+import FlightSearchTabs from "../../../../components/FlightSearchTabs/FlightSearchTabs";
 
 const SearchArea = () => {
   const onSubmit = (values) => {
