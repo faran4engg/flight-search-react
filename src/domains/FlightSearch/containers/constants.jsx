@@ -1,1 +1,2 @@
 export const GET_FLIGHTS = "GET_FLIGHTS";
+export const GET_FLIGHTS_SUCCESS = "GET_FLIGHTS_SUCCESS";

@@ -1,17 +1,15 @@
-import { GET_FLIGHTS } from "./constants";
+import { GET_FLIGHTS_SUCCESS } from "./constants";
 
 const INIT_STATE = {
-  success: false,
-  message: null,
-  parameters: [],
+  data: [],
 };
 
 export default (state = INIT_STATE, action) => {
   switch (action.type) {
-    case GET_FLIGHTS: {
+    case GET_FLIGHTS_SUCCESS: {
       return {
         ...state,
-        success: true,
+        data: action.payload,
       };
     }
 

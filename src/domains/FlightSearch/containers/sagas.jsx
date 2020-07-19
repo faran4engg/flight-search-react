@@ -1,6 +1,7 @@
-import { all, call, fork, takeLatest } from "redux-saga/effects";
+import { all, call, put, fork, takeLatest } from "redux-saga/effects";
 import axios from "../../../axios";
 import { GET_FLIGHTS } from "./constants";
+import { getFlightsSuccess } from "./actions";
 
 const getFlightRequest = async (payload) =>
   await axios
@@ -16,7 +17,7 @@ function* getAllFlights({ payload }) {
     const { data, status } = allFlights;
 
     if (status === 200) {
-      console.log({ data });
+      yield put(getFlightsSuccess(data));
     }
   } catch (error) {
     console.log({ addCropCatch: error });
