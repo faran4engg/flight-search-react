@@ -5,7 +5,7 @@ import Tab from "@material-ui/core/Tab";
 
 import FlightSearchForm from "../FlightSearchForm/FlightSearchForm";
 
-const FlightSearchTabs = () => {
+const FlightSearchTabs = ({ callGetFlights }) => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -24,7 +24,10 @@ const FlightSearchTabs = () => {
         <Tab label="One Way" />
         <Tab label="Round Trip" />
       </Tabs>
-      <FlightSearchForm isRoundTrip={value === 1} />
+      <FlightSearchForm
+        isRoundTrip={value === 1}
+        callGetFlights={callGetFlights}
+      />
     </Paper>
   );
 };

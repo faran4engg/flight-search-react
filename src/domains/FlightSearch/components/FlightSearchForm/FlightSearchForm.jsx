@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const FlightSearchForm = ({ isRoundTrip }) => {
+const FlightSearchForm = ({ isRoundTrip, callGetFlights }) => {
   const classes = useStyles();
   const [selectedDate, setSelectedDate] = React.useState(null);
 
@@ -35,6 +35,7 @@ const FlightSearchForm = ({ isRoundTrip }) => {
   const onSubmit = (values) => {
     console.log(selectedDate);
     console.log("onSubmit...", values);
+    callGetFlights();
   };
 
   return (

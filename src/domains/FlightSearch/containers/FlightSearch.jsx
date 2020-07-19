@@ -7,7 +7,8 @@ const FlightSearch = ({ getFlights, children }) => {
   React.useEffect(() => {
     getFlights();
   }, []);
-  return children();
+  const callGetFlights = () => getFlights();
+  return children({ callGetFlights });
 };
 
 export default connect(null, {
