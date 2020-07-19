@@ -2,7 +2,11 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
 import Button from "@material-ui/core/Button";
 import SearchIcon from "@material-ui/icons/Search";
 import { Form, Field } from "react-final-form";
@@ -22,6 +26,13 @@ const useStyles = makeStyles(() => ({
 
 const FlightSearchForm = ({ isRoundTrip }) => {
   const classes = useStyles();
+  const [selectedDate, setSelectedDate] = React.useState(
+    new Date("2020-07-18T21:11:54")
+  );
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
 
   const onSubmit = (values) => {
     console.log("onSubmit...", values);
@@ -69,19 +80,23 @@ const FlightSearchForm = ({ isRoundTrip }) => {
               </Field>
 
               {isRoundTrip && (
-                <Field name="datelol">
+                <Field name="date">
                   {({ input, meta }) => (
                     <Grid item xs={12} sm={12}>
-                      <TextField
-                        {...input}
-                        name="datelol"
-                        size="small"
-                        fullWidth
-                        id="datelol"
-                        label="Show only when its Round Trip"
-                        variant="outlined"
-                        error={meta.error && meta.touched}
-                      />
+                      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                        <KeyboardDatePicker
+                          {...input}
+                          name="date"
+                          disableToolbar
+                          variant="inline"
+                          format="MM/dd/yyyy"
+                          margin="normal"
+                          id="date"
+                          label="Date picker"
+                          value={selectedDate}
+                          onChange={handleDateChange}
+                        />
+                      </MuiPickersUtilsProvider>
                     </Grid>
                   )}
                 </Field>
