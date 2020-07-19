@@ -13,21 +13,19 @@ const FlightSearchTabs = () => {
   };
 
   return (
-    <>
-      <Paper square={false} elevation={3}>
-        <Tabs
-          centered
-          value={value}
-          indicatorColor="primary"
-          textColor="inherit"
-          onChange={handleChange}
-        >
-          <Tab label="One Way" />
-          <Tab label="Round Trip" />
-        </Tabs>
-        <FlightSearchForm isRoundTrip={value === 1} />
-      </Paper>
-    </>
+    <Paper square={false} elevation={3}>
+      <Tabs
+        centered
+        value={value}
+        indicatorColor="primary"
+        textColor="inherit"
+        onChange={handleChange}
+      >
+        <Tab label="One Way" />
+        <Tab label="Round Trip" />
+      </Tabs>
+      <FlightSearchForm isRoundTrip={value === 1} />
+    </Paper>
   );
 };
 export default FlightSearchTabs;

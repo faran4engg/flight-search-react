@@ -5,7 +5,10 @@ import "./FlightApp.css";
 const FlightApp = () => (
   <Container>
     <div className="flight-app">
-      <SearchArea className="search-area" />
+      <div>
+        <SearchArea className="search-area" />
+      </div>
+
       <ResultArea className="result-area" />
     </div>
   </Container>

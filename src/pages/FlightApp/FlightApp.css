@@ -5,11 +5,11 @@
   grid-template-areas: "search-area" "result-area";
 }
 
-SearchArea.search-area {
+.search-area {
   grid-area: search-area;
 }
 
-ResultArea.result-area {
+.result-area {
   grid-area: result-area;
 }
 
