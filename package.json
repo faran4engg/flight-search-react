@@ -20,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "cd server && json-server -p 9001 generateData.js"
+    "server": "cd server && json-server -p 9001 generateData.js",
+    "develop": "concurrently \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "json-server": "^0.16.1"
   }
 }
