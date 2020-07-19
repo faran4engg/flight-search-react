@@ -1,6 +1,6 @@
 import React from "react";
-import FlightApp from "./pages/FlightApp/FlightApp";
-import TopNavBar from "./components/TopNavBar/TopNavBar";
+import FlightApp from "pages/FlightApp/FlightApp";
+import TopNavBar from "components/TopNavBar/TopNavBar";
 
 const App = () => (
   <>
