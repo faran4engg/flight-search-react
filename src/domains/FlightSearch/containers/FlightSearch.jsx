@@ -1,7 +1,15 @@
-// import React from "react";
+import React from "react";
+import { connect } from "react-redux";
 
-const FlightSearch = ({ children }) => {
+import { getFlights } from "./actions";
+
+const FlightSearch = ({ getFlights, children }) => {
+  React.useEffect(() => {
+    getFlights();
+  }, []);
   return children();
 };
 
-export default FlightSearch;
+export default connect(null, {
+  getFlights,
+})(FlightSearch);

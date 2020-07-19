@@ -26,15 +26,14 @@ const useStyles = makeStyles(() => ({
 
 const FlightSearchForm = ({ isRoundTrip }) => {
   const classes = useStyles();
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2020-07-18T21:11:54")
-  );
+  const [selectedDate, setSelectedDate] = React.useState(null);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
   const onSubmit = (values) => {
+    console.log(selectedDate);
     console.log("onSubmit...", values);
   };
 
@@ -80,24 +79,31 @@ const FlightSearchForm = ({ isRoundTrip }) => {
               </Field>
 
               {isRoundTrip && (
-                <Field name="date">
+                <Field name="somedate">
                   {({ input, meta }) => (
-                    <Grid item xs={12} sm={12}>
-                      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                      <Grid item xs={12} sm={12}>
                         <KeyboardDatePicker
                           {...input}
-                          name="date"
-                          disableToolbar
+                          name="somedate"
+                          size="small"
+                          fullWidth
+                          id="somedate"
+                          autoOk
                           variant="inline"
+                          inputVariant="outlined"
+                          label="With keyboard"
                           format="MM/dd/yyyy"
-                          margin="normal"
-                          id="date"
-                          label="Date picker"
                           value={selectedDate}
-                          onChange={handleDateChange}
+                          InputAdornmentProps={{ position: "end" }}
+                          onChange={(date) => {
+                            const dateISO = date.toISOString();
+                            input.onChange(dateISO);
+                            handleDateChange(dateISO);
+                          }}
                         />
-                      </MuiPickersUtilsProvider>
-                    </Grid>
+                      </Grid>
+                    </MuiPickersUtilsProvider>
                   )}
                 </Field>
               )}
