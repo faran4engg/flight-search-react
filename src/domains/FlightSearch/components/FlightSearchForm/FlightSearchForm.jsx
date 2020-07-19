@@ -7,6 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import { Form, Field } from "react-final-form";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
+import { validate, flightSearchFormSchema } from "./validation";
 
 const useStyles = makeStyles(() => ({
   pad: {
@@ -29,6 +30,7 @@ const FlightSearchForm = ({ isRoundTrip }) => {
     <Container className={classes.pad}>
       <Form
         onSubmit={onSubmit}
+        validate={validate(flightSearchFormSchema)}
         render={({ handleSubmit, form, invalid }) => (
           <form autoComplete="off" noValidate onSubmit={handleSubmit}>
             <Grid container spacing={2}>
@@ -43,6 +45,7 @@ const FlightSearchForm = ({ isRoundTrip }) => {
                       id="departure"
                       label="Departure City"
                       variant="outlined"
+                      error={meta.error && meta.touched}
                     />
                   </Grid>
                 )}
@@ -58,6 +61,7 @@ const FlightSearchForm = ({ isRoundTrip }) => {
                       id="arrival"
                       label="Arrival City"
                       variant="outlined"
+                      error={meta.error && meta.touched}
                     />
                   </Grid>
                 )}
@@ -75,6 +79,7 @@ const FlightSearchForm = ({ isRoundTrip }) => {
                         id="datelol"
                         label="Show only when its Round Trip"
                         variant="outlined"
+                        error={meta.error && meta.touched}
                       />
                     </Grid>
                   )}
@@ -87,6 +92,7 @@ const FlightSearchForm = ({ isRoundTrip }) => {
                 variant="contained"
                 color="primary"
                 startIcon={<SearchIcon />}
+                disabled={invalid}
               >
                 Search
               </Button>
