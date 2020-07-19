@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function TopNavBar() {
+const TopNavBar = () => {
   const classes = useStyles();
 
   return (
@@ -30,4 +30,6 @@ export default function TopNavBar() {
       </AppBar>
     </div>
   );
-}
+};
+
+export default TopNavBar;

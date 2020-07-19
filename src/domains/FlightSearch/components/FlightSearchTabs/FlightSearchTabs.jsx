@@ -2,9 +2,9 @@ import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import Form from "components/Form/Form";
+import FlightSearchForm from "../FlightSearchForm/FlightSearchForm";
 
-export default function IconLabelTabs() {
+const FlightSearchTabs = () => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -18,11 +18,9 @@ export default function IconLabelTabs() {
           <Tab label="One Way" />
           <Tab label="Round Trip" />
         </Tabs>
-        <Form isRoundTrip={value === 1} />
+        <FlightSearchForm isRoundTrip={value === 1} />
       </Paper>
     </>
   );
-}
-/*
-
-      */
+};
+export default FlightSearchTabs;
