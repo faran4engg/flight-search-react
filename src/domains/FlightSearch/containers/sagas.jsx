@@ -20,7 +20,7 @@ function* getAllFlights({ payload }) {
       yield put(getFlightsSuccess(data));
     }
   } catch (error) {
-    console.log({ addCropCatch: error });
+    console.log({ error });
   }
 }
 

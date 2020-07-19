@@ -6,7 +6,6 @@ const FlightApp = () => (
   <Container>
     <div className="flight-app">
       <SearchArea className="search-area" />
-
       <ResultArea className="result-area" />
     </div>
   </Container>

@@ -33,7 +33,6 @@ const FlightSearchForm = ({ isRoundTrip, callGetFlights }) => {
   };
 
   const onSubmit = (values) => {
-    console.log(selectedDate);
     console.log("onSubmit...", values);
     callGetFlights();
   };
