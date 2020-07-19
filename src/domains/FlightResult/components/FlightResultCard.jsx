@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     justifyContent: "space-between",
+    marginBottom: "1em",
   },
   details: {
     display: "flex",
