@@ -1,8 +1,10 @@
-module.exports = () => {
-  const data = { getFlights: [] };
+const data = require("./dataSchema");
 
-  for (let i = 0; i < 100; i++) {
-    data.getFlights.push({ id: i, name: `user${i}` });
+module.exports = () => {
+  const response = { getFlights: [] };
+
+  for (let i = 0; i < 3; i++) {
+    response.getFlights.push(data);
   }
-  return data;
+  return response;
 };
